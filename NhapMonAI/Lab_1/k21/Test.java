@@ -24,6 +24,7 @@ public class Test {
 
 		ISearchAlgo algo1 = new UniformCostSearchAlgo();
 		Node result = algo1.execute(nodeS, "G");
+		
 
 		
 
