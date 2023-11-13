@@ -90,4 +90,9 @@ public class Node {
 			System.out.println();
 		}
 	}
+
+	public Node getBestCandidate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
