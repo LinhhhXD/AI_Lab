@@ -12,6 +12,10 @@ public class MiniMaxSearchAlgo implements ISearchAlgo {
 	@Override
 	public void execute(Node node) {
 		// Enter your code here
+		int v = maxValue(node);
+		System.out.println(v);
+		
+		
 	}
 
 	// function MAX-VALUE(state) returns a utility value
@@ -22,6 +26,13 @@ public class MiniMaxSearchAlgo implements ISearchAlgo {
 	// return v
 	public int maxValue(Node node) {
 		// Enter your code here
+		int v = Integer.MIN_VALUE;
+		List<Node> children = node.getChildren();
+		for(Node child : children) {
+			v = Math.max(v, minValue(child));
+				return v;
+		}
+		
 		return Integer.MIN_VALUE;
 	}
 	// function MIN-VALUE(state) returns a utility value
@@ -33,6 +44,14 @@ public class MiniMaxSearchAlgo implements ISearchAlgo {
 
 	public int minValue(Node node) {
 		// Enter your code here
+		int v = Integer.MAX_VALUE;
+		List<Node> children = node.getChildren();
+		for(Node child : children) {
+			v = Math.min(v, maxValue(child));
+				return v;
+		
+		}
+		
 		return Integer.MAX_VALUE;
 	}
 }
