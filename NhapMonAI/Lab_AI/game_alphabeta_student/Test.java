@@ -35,7 +35,7 @@ public static void main(String[] args) {
 	ISearchAlgo alphabeta = new AlphaBetaSearchAlgo();
 	ISearchAlgo minmax = new MiniMaxSearchAlgo();
 	
-	alphabeta.execute(a);
-	minmax.execute(a);
+	alphabeta.execute(e);
+	minmax.execute(b);
 }
 }

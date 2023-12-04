@@ -13,8 +13,9 @@ public class AlphaBetaSearchAlgo implements ISearchAlgo {
 	@Override
 	public void execute(Node node) {
 		int v = maxValue(node, Integer.MIN_VALUE, Integer.MAX_VALUE);
+
 		System.out.println(v);
-		// Enter your code here
+		
 	}
 
 	// function MAX-VALUE(state, alpha, beta) returns a utility value
@@ -33,10 +34,9 @@ public class AlphaBetaSearchAlgo implements ISearchAlgo {
 		for (Node child : children) {
 			v = Math.max(v, minValue(child, alpha, beta));
 			if (v >= beta) {
+				alpha = Math.max(alpha, v);
 				return v;
 			}
-			alpha = Math.max(alpha, v);
-			return v;
 
 		}
 
@@ -58,10 +58,9 @@ public class AlphaBetaSearchAlgo implements ISearchAlgo {
 		for (Node child : children) {
 			v = Math.min(v, maxValue(child, alpha, beta));
 			if (v <= alpha) {
+				beta = Math.min(beta, v);
 				return v;
 			}
-			beta = Math.min(beta, v);
-			return v;
 		}
 		return Integer.MAX_VALUE;
 	}
